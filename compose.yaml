@@ -1,0 +1,7 @@
+services:
+  api:
+    image: shop_frontend
+    build:
+      context: ./api
+    ports:
+      -"80:80"
