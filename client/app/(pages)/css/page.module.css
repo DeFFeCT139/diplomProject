@@ -1,0 +1,73 @@
+.qrInner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 200px);
+}
+
+.qrBlock {
+    width: 100% !important;
+    background-color: #eeeeeede !important;
+    border-radius: 15px !important;
+    overflow: hidden !important;
+    max-width: 400px !important;
+    min-height: 569px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none !important;
+}
+.qrBlock button{
+    background-color: rgb(25, 55, 255);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.qrBlock img {
+    width: 80%;
+}
+.qrBlock span{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    gap: 10px;
+    text-align: start;
+}
+.qrBlock select{
+    padding: 10px 20px;
+    border: 1px solid #c4c4c4;
+    border-radius: 7px;
+    outline: none;
+}
+
+.block {
+    width: 100%;
+    padding: 15px !important;
+    background-color: #eeeeeede;
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 400px;
+    min-height: 569px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.block button{
+    background-color: rgb(25, 55, 255);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
