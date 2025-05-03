@@ -22,6 +22,19 @@ export async function GET(req) {
         });
         return new Response(JSON.stringify(allRaffles))
     }
+    if (searchParams.get('type') === 'give') {
+        const listId = JSON.parse(searchParams.get('id'))
+        await prisma.packages.updateMany({
+            where:{
+                id: {
+                    in: listId
+                }
+            },
+            data:{
+                status: 'Выдан'
+            }
+        })
+    }
     return new Response(JSON.stringify(allRaffles))
 }
 

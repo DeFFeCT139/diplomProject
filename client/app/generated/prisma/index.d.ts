@@ -2030,15 +2030,15 @@ export namespace Prisma {
 
   export type PackagesWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    idPackages?: number
     AND?: PackagesWhereInput | PackagesWhereInput[]
     OR?: PackagesWhereInput[]
     NOT?: PackagesWhereInput | PackagesWhereInput[]
-    idPackages?: IntFilter<"Packages"> | number
     status?: StringFilter<"Packages"> | string
     user?: StringFilter<"Packages"> | string
     addressIn?: StringFilter<"Packages"> | string
     addressOut?: StringFilter<"Packages"> | string
-  }, "id">
+  }, "id" | "idPackages">
 
   export type PackagesOrderByWithAggregationInput = {
     id?: SortOrder

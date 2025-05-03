@@ -4,6 +4,8 @@ import { Button, Card, Flex, Input, message, Modal, Space, Table } from 'antd';
 import style from './css/page.module.css'
 import Title from 'antd/es/typography/Title';
 import { useState } from 'react';
+import { useQuery } from 'react-query';
+import axios from 'axios';
 
 export default function Homed() {
 
@@ -14,8 +16,25 @@ export default function Homed() {
     code:'',
     list: []
   });
+  const [codeReq, setCodeReq] = useState(null);
 
   const hasSelected = selectedRowKeys.length > 0;
+
+  const givePackajes = async() => {
+    const {data} = await axios.get('api/packages/get',{
+      params:{
+        type:'give'
+      }
+    })
+    const queryData = data.map(item => ({
+      ...item,
+      key:item.id,
+      button: <Button disabled={hasSelected} onClick={() => sendSMS([item.id])} size="large" variant="solid" color='purple'>Выдать</Button>
+    }))
+    return queryData
+  }
+
+  const {data, refetch} = useQuery('givePackajes', givePackajes)
 
   const dataSource = [
     {
@@ -71,7 +90,6 @@ export default function Homed() {
   ];
 
   const onSelectChange = newSelectedRowKeys => {
-    console.log(newSelectedRowKeys)
     setSelectedRowKeys(newSelectedRowKeys);
   };
 
@@ -84,12 +102,25 @@ export default function Homed() {
   }
 
   const onChange = text => {
-    console.log('onChange:', text);
+    setCodeReq(text);
   };
 
-  const sharedProps = {
-    onChange,
-  };
+  const givPackages = async() =>{
+    if (code.code === codeReq) {
+      await axios.post('/api/packages/give',{
+        list: code.list
+      }).then((response)=>{
+        if (response.status === 200) {
+          messageApi.info({
+            type: 'warning',
+            content:response.data
+          });
+          refetch()
+        }
+      })
+      setModalOpen(false)
+    }
+  }
 
   return (
     <div className="">
@@ -112,7 +143,7 @@ export default function Homed() {
             selectedRowKeys,
             onChange: onSelectChange,
           }}
-          dataSource={dataSource}
+          dataSource={data}
           columns={columns}
         />
       </div>
@@ -120,11 +151,11 @@ export default function Homed() {
         title="Введите код из СМС"
         centered
         open={modalOpen}
-        onOk={() => setModalOpen(false)}
+        onOk={givPackages}
         onCancel={() => setModalOpen(false)}
       >
         <div style={{display:'flex', justifyContent:'center', padding:'30px 0px'}}>
-          <Input.OTP formatter={str => str.toUpperCase()} {...sharedProps} />
+          <Input.OTP formatter={str => str.toUpperCase()} {...{onChange}} />
         </div>
       </Modal>
     </div>

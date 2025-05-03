@@ -22,7 +22,10 @@ const saveBD = async (body) => {
     if (!Array.isArray(infocard.data)) return new Response(infocard.data)
     let data = {...infocard.data[0], idPackages: body.idPackages}
     await prisma.packages.create({
-        data: data
+        data: {
+            ...data,
+            status: 'Готов к выдаче'
+        }
     })
     return new Response('Тавар создан!')
 }

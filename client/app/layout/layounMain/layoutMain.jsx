@@ -7,6 +7,7 @@ import logo from '../../img/73027170_2584979534895572_6661102536423899136_o (1).
 import { AppstoreAddOutlined, AppstoreOutlined, HistoryOutlined, LogoutOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
+import { QueryClient, QueryClientProvider } from 'react-query';
 const { Sider, Content } = Layout;
 
 export default function LayoutMain({ children }) {
@@ -17,43 +18,46 @@ export default function LayoutMain({ children }) {
     let links = [
         { title: 'Приём посылок', link: '/', icon: <AppstoreAddOutlined /> },
         { title: 'Выдача посылок', link: '/out-packages', icon: <AppstoreOutlined /> },
-        { title: 'Возврат посылок', link: '/r', icon: <MenuFoldOutlined /> },
+        { title: 'Отправка посылки', link: '/add-packages', icon: <MenuFoldOutlined /> },
         { title: 'История посылок', link: '/gdr', icon: <HistoryOutlined /> },
     ]
+    const queryClient = new QueryClient()
 
     return (
         <div className="App">
-            <Layout >
-                <Sider className={style.sider} width="270px">
-                    <div className="">
-                        <div className={style.logo}>
-                            <Image src={logo} alt="" />
+            <QueryClientProvider client={queryClient}>
+                <Layout >
+                    <Sider className={style.sider} width="270px">
+                        <div className="">
+                            <div className={style.logo}>
+                                <Image src={logo} alt="" />
+                            </div>
+                            {links.map(item =>
+                                <Button icon={item.icon} onClick={() => router.push(item.link)} key={links.indexOf(item)} className={style.button}>
+                                    {item.title}
+                                    {path === item.link ?
+                                        <div className={style.buttonActive}>
+                                            <div className="">
+                                                <div></div>
+                                                <div></div>
+                                            </div>
+                                        </div> :
+                                        <div className=""></div>
+                                    }
+                                </Button>
+                            )}
                         </div>
-                        {links.map(item =>
-                            <Button icon={item.icon} onClick={() => router.push(item.link)} key={links.indexOf(item)} className={style.button}>
-                                {item.title}
-                                {path === item.link ?
-                                    <div className={style.buttonActive}>
-                                        <div className="">
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                    </div> :
-                                    <div className=""></div>
-                                }
-                            </Button>
-                        )}
-                    </div>
-                    <Button icon={<LogoutOutlined />} className={style.buttonExit}>Выход</Button>
-                </Sider>
-                <Layout>
+                        <Button icon={<LogoutOutlined />} className={style.buttonExit}>Выход</Button>
+                    </Sider>
+                    <Layout>
 
-                    <Content className={style.content}>
-                        <div style={{ backgroundColor: "#ffffff", textAlign:'end'}}>Иванов Иван Иваныч</div>
-                        {children}
-                    </Content>
+                        <Content className={style.content}>
+                            <div style={{ backgroundColor: "#ffffff", textAlign: 'end' }}>Иванов Иван Иваныч</div>
+                            {children}
+                        </Content>
+                    </Layout>
                 </Layout>
-            </Layout>
+            </QueryClientProvider>
         </div>
     );
 }

@@ -16,7 +16,7 @@ datasource db {
 
 model Packages {
   id         Int    @id @default(autoincrement())
-  idPackages Int
+  idPackages Int    @unique
   status     String
   user       String
   addressIn  String
