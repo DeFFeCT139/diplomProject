@@ -1,14 +1,18 @@
 'use client'
+import '@ant-design/v5-patch-for-react-19';
 
-import { Button, Popover, QRCode, Table } from "antd";
+import { Button, Drawer, Flex, Form, Input, Popover, QRCode, Space, Table } from "antd";
 import Title from "antd/es/typography/Title";
 import axios from "axios";
+import { useState } from "react";
 import { useQuery } from "react-query";
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
+  const [form] = Form.useForm();
 
   const fetchRaffles = async () => {
-    const response = await axios.get('/api/get');
+    const response = await axios.get('/api/orders');
     const raffles = response.data.sort((a, b) => a.id - b.id).map((item, index) => ({
       ...item,
       key: index + 1,
@@ -16,13 +20,13 @@ export default function Home() {
         id: item.id,
         code: 'pochta'
       })} bordered={false} />}>
-        <Button type="primary">Hover me</Button>
+        <Button type="primary">Наведи</Button>
       </Popover >
     }));
     return raffles
   };
 
-  const { data } = useQuery('packages', fetchRaffles)
+  const { data, refetch } = useQuery('packages', fetchRaffles)
 
   const columns = [
     {
@@ -31,36 +35,96 @@ export default function Home() {
       key: 'key',
     },
     {
-      title: 'Status',
+      title: 'Статус',
       dataIndex: 'status',
       key: 'status',
     },
     {
-      title: 'Address In',
+      title: 'Откуда',
       dataIndex: 'addressIn',
       key: 'addressIn',
     },
     {
-      title: 'Address Out',
+      title: 'Куда',
       dataIndex: 'addressOut',
       key: 'addressOut',
     },
     {
-      title: 'User In',
+      title: 'Номер Телефона',
       dataIndex: 'user',
       key: 'user',
     },
     {
-      title: '',
+      title: 'Дата',
+      dataIndex: 'dateTime',
+      key: 'dateTime',
+    },
+    {
+      title: 'QR',
       dataIndex: 'qr',
       key: 'qr',
+      width: 40
     }
   ];
 
+  const onFinish = (values) => {
+    axios.post('/api/orders', values)
+    refetch()
+    setOpen(false)
+  }
+
   return (
     <div style={{ maxWidth: '1000px', margin: '100px auto 0px auto' }}>
-      <Title level={2}>Посылки</Title>
+      <Flex align="center" justify='space-between'>
+        <Title level={2}>Посылки</Title>
+        <Button onClick={() => setOpen(true)} type="primary">Добавить</Button>
+      </Flex>
       <Table dataSource={data} columns={columns} />
+      <Drawer
+        title="Добавление заказа"
+        width={500}
+        onClose={() => setOpen(false)}
+        open={open}
+        extra={
+          <Space>
+            <Button onClick={() => setOpen(false)}>Отмена</Button>
+          </Space>
+        }
+      >
+        <Form
+          form={form}
+          style={{ maxWidth: 600 }}
+          onFinish={onFinish}
+          initialValues={{ variant: 'filled' }}
+        >
+          <Form.Item
+            label="Номер Телефона"
+            name="user"
+            rules={[{ required: true, message: 'введите номер телефона' }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Откуда"
+            name="addressIn"
+            rules={[{ required: true, message: 'введите адрес отправления' }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Куда"
+            name="addressOut"
+            rules={[{ required: true, message: 'введите адрес доставления' }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item label={null}>
+            <Button type="primary" htmlType="submit">
+              Добавить
+            </Button>
+          </Form.Item>
+        </Form>
+      </Drawer>
     </div>
   );
 }

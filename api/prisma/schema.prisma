@@ -3,7 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../app/generated/prisma"
+  output   = "../node_modules/.prisma/client"
 }
 
 datasource db {
@@ -11,10 +11,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Packages {
-  id         Int    @id @default(autoincrement())
+model Orders {
+  id         Int      @id @default(autoincrement())
   status     String
   user       String
   addressIn  String
   addressOut String
+  dateTime   DateTime
+}
+
+model Statuses {
+  id   Int    @id @default(autoincrement())
+  name String
 }
