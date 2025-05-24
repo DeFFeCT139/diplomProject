@@ -21,7 +21,7 @@ export default function Homed() {
   const hasSelected = selectedRowKeys.length > 0;
 
   const givePackajes = async() => {
-    const {data} = await axios.get('api/packages/get',{
+    const {data} = await axios.get('api/orders',{
       params:{
         type:'give'
       }

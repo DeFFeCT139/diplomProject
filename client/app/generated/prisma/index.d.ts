@@ -14,10 +14,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Packages
+ * Model Orders
  * 
  */
-export type Packages = $Result.DefaultSelection<Prisma.$PackagesPayload>
+export type Orders = $Result.DefaultSelection<Prisma.$OrdersPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -26,8 +26,8 @@ export type Packages = $Result.DefaultSelection<Prisma.$PackagesPayload>
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Packages
- * const packages = await prisma.packages.findMany()
+ * // Fetch zero or more Orders
+ * const orders = await prisma.orders.findMany()
  * ```
  *
  *
@@ -47,8 +47,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Packages
-   * const packages = await prisma.packages.findMany()
+   * // Fetch zero or more Orders
+   * const orders = await prisma.orders.findMany()
    * ```
    *
    *
@@ -145,14 +145,14 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.packages`: Exposes CRUD operations for the **Packages** model.
+   * `prisma.orders`: Exposes CRUD operations for the **Orders** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Packages
-    * const packages = await prisma.packages.findMany()
+    * // Fetch zero or more Orders
+    * const orders = await prisma.orders.findMany()
     * ```
     */
-  get packages(): Prisma.PackagesDelegate<ExtArgs, ClientOptions>;
+  get orders(): Prisma.OrdersDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -211,8 +211,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.6.0
-   * Query Engine version: f676762280b54cd07c770017ed3711ddde35f37a
+   * Prisma Client JS version: 6.8.2
+   * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
    */
   export type PrismaVersion = {
     client: string
@@ -593,7 +593,7 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Packages: 'Packages'
+    Orders: 'Orders'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -612,81 +612,81 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "packages"
+      modelProps: "orders"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      Packages: {
-        payload: Prisma.$PackagesPayload<ExtArgs>
-        fields: Prisma.PackagesFieldRefs
+      Orders: {
+        payload: Prisma.$OrdersPayload<ExtArgs>
+        fields: Prisma.OrdersFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.PackagesFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PackagesPayload> | null
+            args: Prisma.OrdersFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.PackagesFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PackagesPayload>
+            args: Prisma.OrdersFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>
           }
           findFirst: {
-            args: Prisma.PackagesFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PackagesPayload> | null
+            args: Prisma.OrdersFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.PackagesFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PackagesPayload>
+            args: Prisma.OrdersFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>
           }
           findMany: {
-            args: Prisma.PackagesFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PackagesPayload>[]
+            args: Prisma.OrdersFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>[]
           }
           create: {
-            args: Prisma.PackagesCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PackagesPayload>
+            args: Prisma.OrdersCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>
           }
           createMany: {
-            args: Prisma.PackagesCreateManyArgs<ExtArgs>
+            args: Prisma.OrdersCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.PackagesCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PackagesPayload>[]
+            args: Prisma.OrdersCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>[]
           }
           delete: {
-            args: Prisma.PackagesDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PackagesPayload>
+            args: Prisma.OrdersDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>
           }
           update: {
-            args: Prisma.PackagesUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PackagesPayload>
+            args: Prisma.OrdersUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>
           }
           deleteMany: {
-            args: Prisma.PackagesDeleteManyArgs<ExtArgs>
+            args: Prisma.OrdersDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.PackagesUpdateManyArgs<ExtArgs>
+            args: Prisma.OrdersUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.PackagesUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PackagesPayload>[]
+            args: Prisma.OrdersUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>[]
           }
           upsert: {
-            args: Prisma.PackagesUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PackagesPayload>
+            args: Prisma.OrdersUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OrdersPayload>
           }
           aggregate: {
-            args: Prisma.PackagesAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregatePackages>
+            args: Prisma.OrdersAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateOrders>
           }
           groupBy: {
-            args: Prisma.PackagesGroupByArgs<ExtArgs>
-            result: $Utils.Optional<PackagesGroupByOutputType>[]
+            args: Prisma.OrdersGroupByArgs<ExtArgs>
+            result: $Utils.Optional<OrdersGroupByOutputType>[]
           }
           count: {
-            args: Prisma.PackagesCountArgs<ExtArgs>
-            result: $Utils.Optional<PackagesCountAggregateOutputType> | number
+            args: Prisma.OrdersCountArgs<ExtArgs>
+            result: $Utils.Optional<OrdersCountAggregateOutputType> | number
           }
         }
       }
@@ -774,7 +774,7 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    packages?: PackagesOmit
+    orders?: OrdersOmit
   }
 
   /* Types for Logging */
@@ -870,386 +870,382 @@ export namespace Prisma {
    */
 
   /**
-   * Model Packages
+   * Model Orders
    */
 
-  export type AggregatePackages = {
-    _count: PackagesCountAggregateOutputType | null
-    _avg: PackagesAvgAggregateOutputType | null
-    _sum: PackagesSumAggregateOutputType | null
-    _min: PackagesMinAggregateOutputType | null
-    _max: PackagesMaxAggregateOutputType | null
+  export type AggregateOrders = {
+    _count: OrdersCountAggregateOutputType | null
+    _avg: OrdersAvgAggregateOutputType | null
+    _sum: OrdersSumAggregateOutputType | null
+    _min: OrdersMinAggregateOutputType | null
+    _max: OrdersMaxAggregateOutputType | null
   }
 
-  export type PackagesAvgAggregateOutputType = {
+  export type OrdersAvgAggregateOutputType = {
     id: number | null
-    idPackages: number | null
   }
 
-  export type PackagesSumAggregateOutputType = {
+  export type OrdersSumAggregateOutputType = {
     id: number | null
-    idPackages: number | null
   }
 
-  export type PackagesMinAggregateOutputType = {
+  export type OrdersMinAggregateOutputType = {
     id: number | null
-    idPackages: number | null
     status: string | null
     user: string | null
     addressIn: string | null
     addressOut: string | null
+    dateTime: Date | null
   }
 
-  export type PackagesMaxAggregateOutputType = {
+  export type OrdersMaxAggregateOutputType = {
     id: number | null
-    idPackages: number | null
     status: string | null
     user: string | null
     addressIn: string | null
     addressOut: string | null
+    dateTime: Date | null
   }
 
-  export type PackagesCountAggregateOutputType = {
+  export type OrdersCountAggregateOutputType = {
     id: number
-    idPackages: number
     status: number
     user: number
     addressIn: number
     addressOut: number
+    dateTime: number
     _all: number
   }
 
 
-  export type PackagesAvgAggregateInputType = {
+  export type OrdersAvgAggregateInputType = {
     id?: true
-    idPackages?: true
   }
 
-  export type PackagesSumAggregateInputType = {
+  export type OrdersSumAggregateInputType = {
     id?: true
-    idPackages?: true
   }
 
-  export type PackagesMinAggregateInputType = {
+  export type OrdersMinAggregateInputType = {
     id?: true
-    idPackages?: true
     status?: true
     user?: true
     addressIn?: true
     addressOut?: true
+    dateTime?: true
   }
 
-  export type PackagesMaxAggregateInputType = {
+  export type OrdersMaxAggregateInputType = {
     id?: true
-    idPackages?: true
     status?: true
     user?: true
     addressIn?: true
     addressOut?: true
+    dateTime?: true
   }
 
-  export type PackagesCountAggregateInputType = {
+  export type OrdersCountAggregateInputType = {
     id?: true
-    idPackages?: true
     status?: true
     user?: true
     addressIn?: true
     addressOut?: true
+    dateTime?: true
     _all?: true
   }
 
-  export type PackagesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Packages to aggregate.
+     * Filter which Orders to aggregate.
      */
-    where?: PackagesWhereInput
+    where?: OrdersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Packages to fetch.
+     * Determine the order of Orders to fetch.
      */
-    orderBy?: PackagesOrderByWithRelationInput | PackagesOrderByWithRelationInput[]
+    orderBy?: OrdersOrderByWithRelationInput | OrdersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: PackagesWhereUniqueInput
+    cursor?: OrdersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Packages from the position of the cursor.
+     * Take `±n` Orders from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Packages.
+     * Skip the first `n` Orders.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Packages
+     * Count returned Orders
     **/
-    _count?: true | PackagesCountAggregateInputType
+    _count?: true | OrdersCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: PackagesAvgAggregateInputType
+    _avg?: OrdersAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: PackagesSumAggregateInputType
+    _sum?: OrdersSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: PackagesMinAggregateInputType
+    _min?: OrdersMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: PackagesMaxAggregateInputType
+    _max?: OrdersMaxAggregateInputType
   }
 
-  export type GetPackagesAggregateType<T extends PackagesAggregateArgs> = {
-        [P in keyof T & keyof AggregatePackages]: P extends '_count' | 'count'
+  export type GetOrdersAggregateType<T extends OrdersAggregateArgs> = {
+        [P in keyof T & keyof AggregateOrders]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregatePackages[P]>
-      : GetScalarType<T[P], AggregatePackages[P]>
+        : GetScalarType<T[P], AggregateOrders[P]>
+      : GetScalarType<T[P], AggregateOrders[P]>
   }
 
 
 
 
-  export type PackagesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PackagesWhereInput
-    orderBy?: PackagesOrderByWithAggregationInput | PackagesOrderByWithAggregationInput[]
-    by: PackagesScalarFieldEnum[] | PackagesScalarFieldEnum
-    having?: PackagesScalarWhereWithAggregatesInput
+  export type OrdersGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: OrdersWhereInput
+    orderBy?: OrdersOrderByWithAggregationInput | OrdersOrderByWithAggregationInput[]
+    by: OrdersScalarFieldEnum[] | OrdersScalarFieldEnum
+    having?: OrdersScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: PackagesCountAggregateInputType | true
-    _avg?: PackagesAvgAggregateInputType
-    _sum?: PackagesSumAggregateInputType
-    _min?: PackagesMinAggregateInputType
-    _max?: PackagesMaxAggregateInputType
+    _count?: OrdersCountAggregateInputType | true
+    _avg?: OrdersAvgAggregateInputType
+    _sum?: OrdersSumAggregateInputType
+    _min?: OrdersMinAggregateInputType
+    _max?: OrdersMaxAggregateInputType
   }
 
-  export type PackagesGroupByOutputType = {
+  export type OrdersGroupByOutputType = {
     id: number
-    idPackages: number
     status: string
     user: string
     addressIn: string
     addressOut: string
-    _count: PackagesCountAggregateOutputType | null
-    _avg: PackagesAvgAggregateOutputType | null
-    _sum: PackagesSumAggregateOutputType | null
-    _min: PackagesMinAggregateOutputType | null
-    _max: PackagesMaxAggregateOutputType | null
+    dateTime: Date
+    _count: OrdersCountAggregateOutputType | null
+    _avg: OrdersAvgAggregateOutputType | null
+    _sum: OrdersSumAggregateOutputType | null
+    _min: OrdersMinAggregateOutputType | null
+    _max: OrdersMaxAggregateOutputType | null
   }
 
-  type GetPackagesGroupByPayload<T extends PackagesGroupByArgs> = Prisma.PrismaPromise<
+  type GetOrdersGroupByPayload<T extends OrdersGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<PackagesGroupByOutputType, T['by']> &
+      PickEnumerable<OrdersGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof PackagesGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof OrdersGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], PackagesGroupByOutputType[P]>
-            : GetScalarType<T[P], PackagesGroupByOutputType[P]>
+              : GetScalarType<T[P], OrdersGroupByOutputType[P]>
+            : GetScalarType<T[P], OrdersGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type PackagesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type OrdersSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    idPackages?: boolean
     status?: boolean
     user?: boolean
     addressIn?: boolean
     addressOut?: boolean
-  }, ExtArgs["result"]["packages"]>
+    dateTime?: boolean
+  }, ExtArgs["result"]["orders"]>
 
-  export type PackagesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type OrdersSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    idPackages?: boolean
     status?: boolean
     user?: boolean
     addressIn?: boolean
     addressOut?: boolean
-  }, ExtArgs["result"]["packages"]>
+    dateTime?: boolean
+  }, ExtArgs["result"]["orders"]>
 
-  export type PackagesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type OrdersSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    idPackages?: boolean
     status?: boolean
     user?: boolean
     addressIn?: boolean
     addressOut?: boolean
-  }, ExtArgs["result"]["packages"]>
+    dateTime?: boolean
+  }, ExtArgs["result"]["orders"]>
 
-  export type PackagesSelectScalar = {
+  export type OrdersSelectScalar = {
     id?: boolean
-    idPackages?: boolean
     status?: boolean
     user?: boolean
     addressIn?: boolean
     addressOut?: boolean
+    dateTime?: boolean
   }
 
-  export type PackagesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "idPackages" | "status" | "user" | "addressIn" | "addressOut", ExtArgs["result"]["packages"]>
+  export type OrdersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "status" | "user" | "addressIn" | "addressOut" | "dateTime", ExtArgs["result"]["orders"]>
 
-  export type $PackagesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Packages"
+  export type $OrdersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Orders"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      idPackages: number
       status: string
       user: string
       addressIn: string
       addressOut: string
-    }, ExtArgs["result"]["packages"]>
+      dateTime: Date
+    }, ExtArgs["result"]["orders"]>
     composites: {}
   }
 
-  type PackagesGetPayload<S extends boolean | null | undefined | PackagesDefaultArgs> = $Result.GetResult<Prisma.$PackagesPayload, S>
+  type OrdersGetPayload<S extends boolean | null | undefined | OrdersDefaultArgs> = $Result.GetResult<Prisma.$OrdersPayload, S>
 
-  type PackagesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<PackagesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: PackagesCountAggregateInputType | true
+  type OrdersCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<OrdersFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: OrdersCountAggregateInputType | true
     }
 
-  export interface PackagesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Packages'], meta: { name: 'Packages' } }
+  export interface OrdersDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Orders'], meta: { name: 'Orders' } }
     /**
-     * Find zero or one Packages that matches the filter.
-     * @param {PackagesFindUniqueArgs} args - Arguments to find a Packages
+     * Find zero or one Orders that matches the filter.
+     * @param {OrdersFindUniqueArgs} args - Arguments to find a Orders
      * @example
-     * // Get one Packages
-     * const packages = await prisma.packages.findUnique({
+     * // Get one Orders
+     * const orders = await prisma.orders.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends PackagesFindUniqueArgs>(args: SelectSubset<T, PackagesFindUniqueArgs<ExtArgs>>): Prisma__PackagesClient<$Result.GetResult<Prisma.$PackagesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends OrdersFindUniqueArgs>(args: SelectSubset<T, OrdersFindUniqueArgs<ExtArgs>>): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Packages that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Orders that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {PackagesFindUniqueOrThrowArgs} args - Arguments to find a Packages
+     * @param {OrdersFindUniqueOrThrowArgs} args - Arguments to find a Orders
      * @example
-     * // Get one Packages
-     * const packages = await prisma.packages.findUniqueOrThrow({
+     * // Get one Orders
+     * const orders = await prisma.orders.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends PackagesFindUniqueOrThrowArgs>(args: SelectSubset<T, PackagesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PackagesClient<$Result.GetResult<Prisma.$PackagesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends OrdersFindUniqueOrThrowArgs>(args: SelectSubset<T, OrdersFindUniqueOrThrowArgs<ExtArgs>>): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Packages that matches the filter.
+     * Find the first Orders that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PackagesFindFirstArgs} args - Arguments to find a Packages
+     * @param {OrdersFindFirstArgs} args - Arguments to find a Orders
      * @example
-     * // Get one Packages
-     * const packages = await prisma.packages.findFirst({
+     * // Get one Orders
+     * const orders = await prisma.orders.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends PackagesFindFirstArgs>(args?: SelectSubset<T, PackagesFindFirstArgs<ExtArgs>>): Prisma__PackagesClient<$Result.GetResult<Prisma.$PackagesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends OrdersFindFirstArgs>(args?: SelectSubset<T, OrdersFindFirstArgs<ExtArgs>>): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Packages that matches the filter or
+     * Find the first Orders that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PackagesFindFirstOrThrowArgs} args - Arguments to find a Packages
+     * @param {OrdersFindFirstOrThrowArgs} args - Arguments to find a Orders
      * @example
-     * // Get one Packages
-     * const packages = await prisma.packages.findFirstOrThrow({
+     * // Get one Orders
+     * const orders = await prisma.orders.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends PackagesFindFirstOrThrowArgs>(args?: SelectSubset<T, PackagesFindFirstOrThrowArgs<ExtArgs>>): Prisma__PackagesClient<$Result.GetResult<Prisma.$PackagesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends OrdersFindFirstOrThrowArgs>(args?: SelectSubset<T, OrdersFindFirstOrThrowArgs<ExtArgs>>): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Packages that matches the filter.
+     * Find zero or more Orders that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PackagesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {OrdersFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Packages
-     * const packages = await prisma.packages.findMany()
+     * // Get all Orders
+     * const orders = await prisma.orders.findMany()
      * 
-     * // Get first 10 Packages
-     * const packages = await prisma.packages.findMany({ take: 10 })
+     * // Get first 10 Orders
+     * const orders = await prisma.orders.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const packagesWithIdOnly = await prisma.packages.findMany({ select: { id: true } })
+     * const ordersWithIdOnly = await prisma.orders.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends PackagesFindManyArgs>(args?: SelectSubset<T, PackagesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PackagesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends OrdersFindManyArgs>(args?: SelectSubset<T, OrdersFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Packages.
-     * @param {PackagesCreateArgs} args - Arguments to create a Packages.
+     * Create a Orders.
+     * @param {OrdersCreateArgs} args - Arguments to create a Orders.
      * @example
-     * // Create one Packages
-     * const Packages = await prisma.packages.create({
+     * // Create one Orders
+     * const Orders = await prisma.orders.create({
      *   data: {
-     *     // ... data to create a Packages
+     *     // ... data to create a Orders
      *   }
      * })
      * 
      */
-    create<T extends PackagesCreateArgs>(args: SelectSubset<T, PackagesCreateArgs<ExtArgs>>): Prisma__PackagesClient<$Result.GetResult<Prisma.$PackagesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends OrdersCreateArgs>(args: SelectSubset<T, OrdersCreateArgs<ExtArgs>>): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Packages.
-     * @param {PackagesCreateManyArgs} args - Arguments to create many Packages.
+     * Create many Orders.
+     * @param {OrdersCreateManyArgs} args - Arguments to create many Orders.
      * @example
-     * // Create many Packages
-     * const packages = await prisma.packages.createMany({
+     * // Create many Orders
+     * const orders = await prisma.orders.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends PackagesCreateManyArgs>(args?: SelectSubset<T, PackagesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends OrdersCreateManyArgs>(args?: SelectSubset<T, OrdersCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Packages and returns the data saved in the database.
-     * @param {PackagesCreateManyAndReturnArgs} args - Arguments to create many Packages.
+     * Create many Orders and returns the data saved in the database.
+     * @param {OrdersCreateManyAndReturnArgs} args - Arguments to create many Orders.
      * @example
-     * // Create many Packages
-     * const packages = await prisma.packages.createManyAndReturn({
+     * // Create many Orders
+     * const orders = await prisma.orders.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Packages and only return the `id`
-     * const packagesWithIdOnly = await prisma.packages.createManyAndReturn({
+     * // Create many Orders and only return the `id`
+     * const ordersWithIdOnly = await prisma.orders.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -1259,28 +1255,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends PackagesCreateManyAndReturnArgs>(args?: SelectSubset<T, PackagesCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PackagesPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends OrdersCreateManyAndReturnArgs>(args?: SelectSubset<T, OrdersCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Packages.
-     * @param {PackagesDeleteArgs} args - Arguments to delete one Packages.
+     * Delete a Orders.
+     * @param {OrdersDeleteArgs} args - Arguments to delete one Orders.
      * @example
-     * // Delete one Packages
-     * const Packages = await prisma.packages.delete({
+     * // Delete one Orders
+     * const Orders = await prisma.orders.delete({
      *   where: {
-     *     // ... filter to delete one Packages
+     *     // ... filter to delete one Orders
      *   }
      * })
      * 
      */
-    delete<T extends PackagesDeleteArgs>(args: SelectSubset<T, PackagesDeleteArgs<ExtArgs>>): Prisma__PackagesClient<$Result.GetResult<Prisma.$PackagesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends OrdersDeleteArgs>(args: SelectSubset<T, OrdersDeleteArgs<ExtArgs>>): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Packages.
-     * @param {PackagesUpdateArgs} args - Arguments to update one Packages.
+     * Update one Orders.
+     * @param {OrdersUpdateArgs} args - Arguments to update one Orders.
      * @example
-     * // Update one Packages
-     * const packages = await prisma.packages.update({
+     * // Update one Orders
+     * const orders = await prisma.orders.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1290,30 +1286,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends PackagesUpdateArgs>(args: SelectSubset<T, PackagesUpdateArgs<ExtArgs>>): Prisma__PackagesClient<$Result.GetResult<Prisma.$PackagesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends OrdersUpdateArgs>(args: SelectSubset<T, OrdersUpdateArgs<ExtArgs>>): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Packages.
-     * @param {PackagesDeleteManyArgs} args - Arguments to filter Packages to delete.
+     * Delete zero or more Orders.
+     * @param {OrdersDeleteManyArgs} args - Arguments to filter Orders to delete.
      * @example
-     * // Delete a few Packages
-     * const { count } = await prisma.packages.deleteMany({
+     * // Delete a few Orders
+     * const { count } = await prisma.orders.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends PackagesDeleteManyArgs>(args?: SelectSubset<T, PackagesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends OrdersDeleteManyArgs>(args?: SelectSubset<T, OrdersDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Packages.
+     * Update zero or more Orders.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PackagesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {OrdersUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Packages
-     * const packages = await prisma.packages.updateMany({
+     * // Update many Orders
+     * const orders = await prisma.orders.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1323,14 +1319,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends PackagesUpdateManyArgs>(args: SelectSubset<T, PackagesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends OrdersUpdateManyArgs>(args: SelectSubset<T, OrdersUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Packages and returns the data updated in the database.
-     * @param {PackagesUpdateManyAndReturnArgs} args - Arguments to update many Packages.
+     * Update zero or more Orders and returns the data updated in the database.
+     * @param {OrdersUpdateManyAndReturnArgs} args - Arguments to update many Orders.
      * @example
-     * // Update many Packages
-     * const packages = await prisma.packages.updateManyAndReturn({
+     * // Update many Orders
+     * const orders = await prisma.orders.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1339,8 +1335,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Packages and only return the `id`
-     * const packagesWithIdOnly = await prisma.packages.updateManyAndReturn({
+     * // Update zero or more Orders and only return the `id`
+     * const ordersWithIdOnly = await prisma.orders.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -1353,56 +1349,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends PackagesUpdateManyAndReturnArgs>(args: SelectSubset<T, PackagesUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PackagesPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends OrdersUpdateManyAndReturnArgs>(args: SelectSubset<T, OrdersUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Packages.
-     * @param {PackagesUpsertArgs} args - Arguments to update or create a Packages.
+     * Create or update one Orders.
+     * @param {OrdersUpsertArgs} args - Arguments to update or create a Orders.
      * @example
-     * // Update or create a Packages
-     * const packages = await prisma.packages.upsert({
+     * // Update or create a Orders
+     * const orders = await prisma.orders.upsert({
      *   create: {
-     *     // ... data to create a Packages
+     *     // ... data to create a Orders
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Packages we want to update
+     *     // ... the filter for the Orders we want to update
      *   }
      * })
      */
-    upsert<T extends PackagesUpsertArgs>(args: SelectSubset<T, PackagesUpsertArgs<ExtArgs>>): Prisma__PackagesClient<$Result.GetResult<Prisma.$PackagesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends OrdersUpsertArgs>(args: SelectSubset<T, OrdersUpsertArgs<ExtArgs>>): Prisma__OrdersClient<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Packages.
+     * Count the number of Orders.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PackagesCountArgs} args - Arguments to filter Packages to count.
+     * @param {OrdersCountArgs} args - Arguments to filter Orders to count.
      * @example
-     * // Count the number of Packages
-     * const count = await prisma.packages.count({
+     * // Count the number of Orders
+     * const count = await prisma.orders.count({
      *   where: {
-     *     // ... the filter for the Packages we want to count
+     *     // ... the filter for the Orders we want to count
      *   }
      * })
     **/
-    count<T extends PackagesCountArgs>(
-      args?: Subset<T, PackagesCountArgs>,
+    count<T extends OrdersCountArgs>(
+      args?: Subset<T, OrdersCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], PackagesCountAggregateOutputType>
+          : GetScalarType<T['select'], OrdersCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Packages.
+     * Allows you to perform aggregations operations on a Orders.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PackagesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {OrdersAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -1422,13 +1418,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends PackagesAggregateArgs>(args: Subset<T, PackagesAggregateArgs>): Prisma.PrismaPromise<GetPackagesAggregateType<T>>
+    aggregate<T extends OrdersAggregateArgs>(args: Subset<T, OrdersAggregateArgs>): Prisma.PrismaPromise<GetOrdersAggregateType<T>>
 
     /**
-     * Group by Packages.
+     * Group by Orders.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PackagesGroupByArgs} args - Group by arguments.
+     * @param {OrdersGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1443,14 +1439,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends PackagesGroupByArgs,
+      T extends OrdersGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: PackagesGroupByArgs['orderBy'] }
-        : { orderBy?: PackagesGroupByArgs['orderBy'] },
+        ? { orderBy: OrdersGroupByArgs['orderBy'] }
+        : { orderBy?: OrdersGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1499,20 +1495,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, PackagesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPackagesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, OrdersGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetOrdersGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Packages model
+   * Fields of the Orders model
    */
-  readonly fields: PackagesFieldRefs;
+  readonly fields: OrdersFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Packages.
+   * The delegate class that acts as a "Promise-like" for Orders.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__PackagesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__OrdersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1540,378 +1536,376 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Packages model
+   * Fields of the Orders model
    */
-  interface PackagesFieldRefs {
-    readonly id: FieldRef<"Packages", 'Int'>
-    readonly idPackages: FieldRef<"Packages", 'Int'>
-    readonly status: FieldRef<"Packages", 'String'>
-    readonly user: FieldRef<"Packages", 'String'>
-    readonly addressIn: FieldRef<"Packages", 'String'>
-    readonly addressOut: FieldRef<"Packages", 'String'>
+  interface OrdersFieldRefs {
+    readonly id: FieldRef<"Orders", 'Int'>
+    readonly status: FieldRef<"Orders", 'String'>
+    readonly user: FieldRef<"Orders", 'String'>
+    readonly addressIn: FieldRef<"Orders", 'String'>
+    readonly addressOut: FieldRef<"Orders", 'String'>
+    readonly dateTime: FieldRef<"Orders", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Packages findUnique
+   * Orders findUnique
    */
-  export type PackagesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Packages
+     * Select specific fields to fetch from the Orders
      */
-    select?: PackagesSelect<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Packages
+     * Omit specific fields from the Orders
      */
-    omit?: PackagesOmit<ExtArgs> | null
+    omit?: OrdersOmit<ExtArgs> | null
     /**
-     * Filter, which Packages to fetch.
+     * Filter, which Orders to fetch.
      */
-    where: PackagesWhereUniqueInput
+    where: OrdersWhereUniqueInput
   }
 
   /**
-   * Packages findUniqueOrThrow
+   * Orders findUniqueOrThrow
    */
-  export type PackagesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Packages
+     * Select specific fields to fetch from the Orders
      */
-    select?: PackagesSelect<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Packages
+     * Omit specific fields from the Orders
      */
-    omit?: PackagesOmit<ExtArgs> | null
+    omit?: OrdersOmit<ExtArgs> | null
     /**
-     * Filter, which Packages to fetch.
+     * Filter, which Orders to fetch.
      */
-    where: PackagesWhereUniqueInput
+    where: OrdersWhereUniqueInput
   }
 
   /**
-   * Packages findFirst
+   * Orders findFirst
    */
-  export type PackagesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Packages
+     * Select specific fields to fetch from the Orders
      */
-    select?: PackagesSelect<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Packages
+     * Omit specific fields from the Orders
      */
-    omit?: PackagesOmit<ExtArgs> | null
+    omit?: OrdersOmit<ExtArgs> | null
     /**
-     * Filter, which Packages to fetch.
+     * Filter, which Orders to fetch.
      */
-    where?: PackagesWhereInput
+    where?: OrdersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Packages to fetch.
+     * Determine the order of Orders to fetch.
      */
-    orderBy?: PackagesOrderByWithRelationInput | PackagesOrderByWithRelationInput[]
+    orderBy?: OrdersOrderByWithRelationInput | OrdersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Packages.
+     * Sets the position for searching for Orders.
      */
-    cursor?: PackagesWhereUniqueInput
+    cursor?: OrdersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Packages from the position of the cursor.
+     * Take `±n` Orders from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Packages.
+     * Skip the first `n` Orders.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Packages.
+     * Filter by unique combinations of Orders.
      */
-    distinct?: PackagesScalarFieldEnum | PackagesScalarFieldEnum[]
+    distinct?: OrdersScalarFieldEnum | OrdersScalarFieldEnum[]
   }
 
   /**
-   * Packages findFirstOrThrow
+   * Orders findFirstOrThrow
    */
-  export type PackagesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Packages
+     * Select specific fields to fetch from the Orders
      */
-    select?: PackagesSelect<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Packages
+     * Omit specific fields from the Orders
      */
-    omit?: PackagesOmit<ExtArgs> | null
+    omit?: OrdersOmit<ExtArgs> | null
     /**
-     * Filter, which Packages to fetch.
+     * Filter, which Orders to fetch.
      */
-    where?: PackagesWhereInput
+    where?: OrdersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Packages to fetch.
+     * Determine the order of Orders to fetch.
      */
-    orderBy?: PackagesOrderByWithRelationInput | PackagesOrderByWithRelationInput[]
+    orderBy?: OrdersOrderByWithRelationInput | OrdersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Packages.
+     * Sets the position for searching for Orders.
      */
-    cursor?: PackagesWhereUniqueInput
+    cursor?: OrdersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Packages from the position of the cursor.
+     * Take `±n` Orders from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Packages.
+     * Skip the first `n` Orders.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Packages.
+     * Filter by unique combinations of Orders.
      */
-    distinct?: PackagesScalarFieldEnum | PackagesScalarFieldEnum[]
+    distinct?: OrdersScalarFieldEnum | OrdersScalarFieldEnum[]
   }
 
   /**
-   * Packages findMany
+   * Orders findMany
    */
-  export type PackagesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Packages
+     * Select specific fields to fetch from the Orders
      */
-    select?: PackagesSelect<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Packages
+     * Omit specific fields from the Orders
      */
-    omit?: PackagesOmit<ExtArgs> | null
+    omit?: OrdersOmit<ExtArgs> | null
     /**
-     * Filter, which Packages to fetch.
+     * Filter, which Orders to fetch.
      */
-    where?: PackagesWhereInput
+    where?: OrdersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Packages to fetch.
+     * Determine the order of Orders to fetch.
      */
-    orderBy?: PackagesOrderByWithRelationInput | PackagesOrderByWithRelationInput[]
+    orderBy?: OrdersOrderByWithRelationInput | OrdersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Packages.
+     * Sets the position for listing Orders.
      */
-    cursor?: PackagesWhereUniqueInput
+    cursor?: OrdersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Packages from the position of the cursor.
+     * Take `±n` Orders from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Packages.
+     * Skip the first `n` Orders.
      */
     skip?: number
-    distinct?: PackagesScalarFieldEnum | PackagesScalarFieldEnum[]
+    distinct?: OrdersScalarFieldEnum | OrdersScalarFieldEnum[]
   }
 
   /**
-   * Packages create
+   * Orders create
    */
-  export type PackagesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Packages
+     * Select specific fields to fetch from the Orders
      */
-    select?: PackagesSelect<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Packages
+     * Omit specific fields from the Orders
      */
-    omit?: PackagesOmit<ExtArgs> | null
+    omit?: OrdersOmit<ExtArgs> | null
     /**
-     * The data needed to create a Packages.
+     * The data needed to create a Orders.
      */
-    data: XOR<PackagesCreateInput, PackagesUncheckedCreateInput>
+    data: XOR<OrdersCreateInput, OrdersUncheckedCreateInput>
   }
 
   /**
-   * Packages createMany
+   * Orders createMany
    */
-  export type PackagesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Packages.
+     * The data used to create many Orders.
      */
-    data: PackagesCreateManyInput | PackagesCreateManyInput[]
-    skipDuplicates?: boolean
+    data: OrdersCreateManyInput | OrdersCreateManyInput[]
   }
 
   /**
-   * Packages createManyAndReturn
+   * Orders createManyAndReturn
    */
-  export type PackagesCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Packages
+     * Select specific fields to fetch from the Orders
      */
-    select?: PackagesSelectCreateManyAndReturn<ExtArgs> | null
+    select?: OrdersSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Packages
+     * Omit specific fields from the Orders
      */
-    omit?: PackagesOmit<ExtArgs> | null
+    omit?: OrdersOmit<ExtArgs> | null
     /**
-     * The data used to create many Packages.
+     * The data used to create many Orders.
      */
-    data: PackagesCreateManyInput | PackagesCreateManyInput[]
-    skipDuplicates?: boolean
+    data: OrdersCreateManyInput | OrdersCreateManyInput[]
   }
 
   /**
-   * Packages update
+   * Orders update
    */
-  export type PackagesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Packages
+     * Select specific fields to fetch from the Orders
      */
-    select?: PackagesSelect<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Packages
+     * Omit specific fields from the Orders
      */
-    omit?: PackagesOmit<ExtArgs> | null
+    omit?: OrdersOmit<ExtArgs> | null
     /**
-     * The data needed to update a Packages.
+     * The data needed to update a Orders.
      */
-    data: XOR<PackagesUpdateInput, PackagesUncheckedUpdateInput>
+    data: XOR<OrdersUpdateInput, OrdersUncheckedUpdateInput>
     /**
-     * Choose, which Packages to update.
+     * Choose, which Orders to update.
      */
-    where: PackagesWhereUniqueInput
+    where: OrdersWhereUniqueInput
   }
 
   /**
-   * Packages updateMany
+   * Orders updateMany
    */
-  export type PackagesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Packages.
+     * The data used to update Orders.
      */
-    data: XOR<PackagesUpdateManyMutationInput, PackagesUncheckedUpdateManyInput>
+    data: XOR<OrdersUpdateManyMutationInput, OrdersUncheckedUpdateManyInput>
     /**
-     * Filter which Packages to update
+     * Filter which Orders to update
      */
-    where?: PackagesWhereInput
+    where?: OrdersWhereInput
     /**
-     * Limit how many Packages to update.
+     * Limit how many Orders to update.
      */
     limit?: number
   }
 
   /**
-   * Packages updateManyAndReturn
+   * Orders updateManyAndReturn
    */
-  export type PackagesUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Packages
+     * Select specific fields to fetch from the Orders
      */
-    select?: PackagesSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: OrdersSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Packages
+     * Omit specific fields from the Orders
      */
-    omit?: PackagesOmit<ExtArgs> | null
+    omit?: OrdersOmit<ExtArgs> | null
     /**
-     * The data used to update Packages.
+     * The data used to update Orders.
      */
-    data: XOR<PackagesUpdateManyMutationInput, PackagesUncheckedUpdateManyInput>
+    data: XOR<OrdersUpdateManyMutationInput, OrdersUncheckedUpdateManyInput>
     /**
-     * Filter which Packages to update
+     * Filter which Orders to update
      */
-    where?: PackagesWhereInput
+    where?: OrdersWhereInput
     /**
-     * Limit how many Packages to update.
+     * Limit how many Orders to update.
      */
     limit?: number
   }
 
   /**
-   * Packages upsert
+   * Orders upsert
    */
-  export type PackagesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Packages
+     * Select specific fields to fetch from the Orders
      */
-    select?: PackagesSelect<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Packages
+     * Omit specific fields from the Orders
      */
-    omit?: PackagesOmit<ExtArgs> | null
+    omit?: OrdersOmit<ExtArgs> | null
     /**
-     * The filter to search for the Packages to update in case it exists.
+     * The filter to search for the Orders to update in case it exists.
      */
-    where: PackagesWhereUniqueInput
+    where: OrdersWhereUniqueInput
     /**
-     * In case the Packages found by the `where` argument doesn't exist, create a new Packages with this data.
+     * In case the Orders found by the `where` argument doesn't exist, create a new Orders with this data.
      */
-    create: XOR<PackagesCreateInput, PackagesUncheckedCreateInput>
+    create: XOR<OrdersCreateInput, OrdersUncheckedCreateInput>
     /**
-     * In case the Packages was found with the provided `where` argument, update it with this data.
+     * In case the Orders was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<PackagesUpdateInput, PackagesUncheckedUpdateInput>
+    update: XOR<OrdersUpdateInput, OrdersUncheckedUpdateInput>
   }
 
   /**
-   * Packages delete
+   * Orders delete
    */
-  export type PackagesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Packages
+     * Select specific fields to fetch from the Orders
      */
-    select?: PackagesSelect<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Packages
+     * Omit specific fields from the Orders
      */
-    omit?: PackagesOmit<ExtArgs> | null
+    omit?: OrdersOmit<ExtArgs> | null
     /**
-     * Filter which Packages to delete.
+     * Filter which Orders to delete.
      */
-    where: PackagesWhereUniqueInput
+    where: OrdersWhereUniqueInput
   }
 
   /**
-   * Packages deleteMany
+   * Orders deleteMany
    */
-  export type PackagesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Packages to delete
+     * Filter which Orders to delete
      */
-    where?: PackagesWhereInput
+    where?: OrdersWhereInput
     /**
-     * Limit how many Packages to delete.
+     * Limit how many Orders to delete.
      */
     limit?: number
   }
 
   /**
-   * Packages without action
+   * Orders without action
    */
-  export type PackagesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type OrdersDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Packages
+     * Select specific fields to fetch from the Orders
      */
-    select?: PackagesSelect<ExtArgs> | null
+    select?: OrdersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Packages
+     * Omit specific fields from the Orders
      */
-    omit?: PackagesOmit<ExtArgs> | null
+    omit?: OrdersOmit<ExtArgs> | null
   }
 
 
@@ -1920,25 +1914,22 @@ export namespace Prisma {
    */
 
   export const TransactionIsolationLevel: {
-    ReadUncommitted: 'ReadUncommitted',
-    ReadCommitted: 'ReadCommitted',
-    RepeatableRead: 'RepeatableRead',
     Serializable: 'Serializable'
   };
 
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const PackagesScalarFieldEnum: {
+  export const OrdersScalarFieldEnum: {
     id: 'id',
-    idPackages: 'idPackages',
     status: 'status',
     user: 'user',
     addressIn: 'addressIn',
-    addressOut: 'addressOut'
+    addressOut: 'addressOut',
+    dateTime: 'dateTime'
   };
 
-  export type PackagesScalarFieldEnum = (typeof PackagesScalarFieldEnum)[keyof typeof PackagesScalarFieldEnum]
+  export type OrdersScalarFieldEnum = (typeof OrdersScalarFieldEnum)[keyof typeof OrdersScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -1947,14 +1938,6 @@ export namespace Prisma {
   };
 
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
-
-
-  export const QueryMode: {
-    default: 'default',
-    insensitive: 'insensitive'
-  };
-
-  export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 
 
   /**
@@ -1970,13 +1953,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Int[]'
-   */
-  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
-    
-
-
-  /**
    * Reference to a field of type 'String'
    */
   export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
@@ -1984,9 +1960,9 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'String[]'
+   * Reference to a field of type 'DateTime'
    */
-  export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
     
 
 
@@ -1995,141 +1971,134 @@ export namespace Prisma {
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
     
-
-
-  /**
-   * Reference to a field of type 'Float[]'
-   */
-  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
-    
   /**
    * Deep Input Types
    */
 
 
-  export type PackagesWhereInput = {
-    AND?: PackagesWhereInput | PackagesWhereInput[]
-    OR?: PackagesWhereInput[]
-    NOT?: PackagesWhereInput | PackagesWhereInput[]
-    id?: IntFilter<"Packages"> | number
-    idPackages?: IntFilter<"Packages"> | number
-    status?: StringFilter<"Packages"> | string
-    user?: StringFilter<"Packages"> | string
-    addressIn?: StringFilter<"Packages"> | string
-    addressOut?: StringFilter<"Packages"> | string
+  export type OrdersWhereInput = {
+    AND?: OrdersWhereInput | OrdersWhereInput[]
+    OR?: OrdersWhereInput[]
+    NOT?: OrdersWhereInput | OrdersWhereInput[]
+    id?: IntFilter<"Orders"> | number
+    status?: StringFilter<"Orders"> | string
+    user?: StringFilter<"Orders"> | string
+    addressIn?: StringFilter<"Orders"> | string
+    addressOut?: StringFilter<"Orders"> | string
+    dateTime?: DateTimeFilter<"Orders"> | Date | string
   }
 
-  export type PackagesOrderByWithRelationInput = {
+  export type OrdersOrderByWithRelationInput = {
     id?: SortOrder
-    idPackages?: SortOrder
     status?: SortOrder
     user?: SortOrder
     addressIn?: SortOrder
     addressOut?: SortOrder
+    dateTime?: SortOrder
   }
 
-  export type PackagesWhereUniqueInput = Prisma.AtLeast<{
+  export type OrdersWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    idPackages?: number
-    AND?: PackagesWhereInput | PackagesWhereInput[]
-    OR?: PackagesWhereInput[]
-    NOT?: PackagesWhereInput | PackagesWhereInput[]
-    status?: StringFilter<"Packages"> | string
-    user?: StringFilter<"Packages"> | string
-    addressIn?: StringFilter<"Packages"> | string
-    addressOut?: StringFilter<"Packages"> | string
-  }, "id" | "idPackages">
+    AND?: OrdersWhereInput | OrdersWhereInput[]
+    OR?: OrdersWhereInput[]
+    NOT?: OrdersWhereInput | OrdersWhereInput[]
+    status?: StringFilter<"Orders"> | string
+    user?: StringFilter<"Orders"> | string
+    addressIn?: StringFilter<"Orders"> | string
+    addressOut?: StringFilter<"Orders"> | string
+    dateTime?: DateTimeFilter<"Orders"> | Date | string
+  }, "id">
 
-  export type PackagesOrderByWithAggregationInput = {
+  export type OrdersOrderByWithAggregationInput = {
     id?: SortOrder
-    idPackages?: SortOrder
     status?: SortOrder
     user?: SortOrder
     addressIn?: SortOrder
     addressOut?: SortOrder
-    _count?: PackagesCountOrderByAggregateInput
-    _avg?: PackagesAvgOrderByAggregateInput
-    _max?: PackagesMaxOrderByAggregateInput
-    _min?: PackagesMinOrderByAggregateInput
-    _sum?: PackagesSumOrderByAggregateInput
+    dateTime?: SortOrder
+    _count?: OrdersCountOrderByAggregateInput
+    _avg?: OrdersAvgOrderByAggregateInput
+    _max?: OrdersMaxOrderByAggregateInput
+    _min?: OrdersMinOrderByAggregateInput
+    _sum?: OrdersSumOrderByAggregateInput
   }
 
-  export type PackagesScalarWhereWithAggregatesInput = {
-    AND?: PackagesScalarWhereWithAggregatesInput | PackagesScalarWhereWithAggregatesInput[]
-    OR?: PackagesScalarWhereWithAggregatesInput[]
-    NOT?: PackagesScalarWhereWithAggregatesInput | PackagesScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Packages"> | number
-    idPackages?: IntWithAggregatesFilter<"Packages"> | number
-    status?: StringWithAggregatesFilter<"Packages"> | string
-    user?: StringWithAggregatesFilter<"Packages"> | string
-    addressIn?: StringWithAggregatesFilter<"Packages"> | string
-    addressOut?: StringWithAggregatesFilter<"Packages"> | string
+  export type OrdersScalarWhereWithAggregatesInput = {
+    AND?: OrdersScalarWhereWithAggregatesInput | OrdersScalarWhereWithAggregatesInput[]
+    OR?: OrdersScalarWhereWithAggregatesInput[]
+    NOT?: OrdersScalarWhereWithAggregatesInput | OrdersScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Orders"> | number
+    status?: StringWithAggregatesFilter<"Orders"> | string
+    user?: StringWithAggregatesFilter<"Orders"> | string
+    addressIn?: StringWithAggregatesFilter<"Orders"> | string
+    addressOut?: StringWithAggregatesFilter<"Orders"> | string
+    dateTime?: DateTimeWithAggregatesFilter<"Orders"> | Date | string
   }
 
-  export type PackagesCreateInput = {
-    idPackages: number
+  export type OrdersCreateInput = {
     status: string
     user: string
     addressIn: string
     addressOut: string
+    dateTime: Date | string
   }
 
-  export type PackagesUncheckedCreateInput = {
+  export type OrdersUncheckedCreateInput = {
     id?: number
-    idPackages: number
     status: string
     user: string
     addressIn: string
     addressOut: string
+    dateTime: Date | string
   }
 
-  export type PackagesUpdateInput = {
-    idPackages?: IntFieldUpdateOperationsInput | number
+  export type OrdersUpdateInput = {
     status?: StringFieldUpdateOperationsInput | string
     user?: StringFieldUpdateOperationsInput | string
     addressIn?: StringFieldUpdateOperationsInput | string
     addressOut?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type PackagesUncheckedUpdateInput = {
+  export type OrdersUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    idPackages?: IntFieldUpdateOperationsInput | number
     status?: StringFieldUpdateOperationsInput | string
     user?: StringFieldUpdateOperationsInput | string
     addressIn?: StringFieldUpdateOperationsInput | string
     addressOut?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type PackagesCreateManyInput = {
+  export type OrdersCreateManyInput = {
     id?: number
-    idPackages: number
     status: string
     user: string
     addressIn: string
     addressOut: string
+    dateTime: Date | string
   }
 
-  export type PackagesUpdateManyMutationInput = {
-    idPackages?: IntFieldUpdateOperationsInput | number
+  export type OrdersUpdateManyMutationInput = {
     status?: StringFieldUpdateOperationsInput | string
     user?: StringFieldUpdateOperationsInput | string
     addressIn?: StringFieldUpdateOperationsInput | string
     addressOut?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type PackagesUncheckedUpdateManyInput = {
+  export type OrdersUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    idPackages?: IntFieldUpdateOperationsInput | number
     status?: StringFieldUpdateOperationsInput | string
     user?: StringFieldUpdateOperationsInput | string
     addressIn?: StringFieldUpdateOperationsInput | string
     addressOut?: StringFieldUpdateOperationsInput | string
+    dateTime?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -2139,8 +2108,8 @@ export namespace Prisma {
 
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    in?: string[]
+    notIn?: string[]
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -2148,51 +2117,59 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type PackagesCountOrderByAggregateInput = {
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type OrdersCountOrderByAggregateInput = {
     id?: SortOrder
-    idPackages?: SortOrder
     status?: SortOrder
     user?: SortOrder
     addressIn?: SortOrder
     addressOut?: SortOrder
+    dateTime?: SortOrder
   }
 
-  export type PackagesAvgOrderByAggregateInput = {
+  export type OrdersAvgOrderByAggregateInput = {
     id?: SortOrder
-    idPackages?: SortOrder
   }
 
-  export type PackagesMaxOrderByAggregateInput = {
+  export type OrdersMaxOrderByAggregateInput = {
     id?: SortOrder
-    idPackages?: SortOrder
     status?: SortOrder
     user?: SortOrder
     addressIn?: SortOrder
     addressOut?: SortOrder
+    dateTime?: SortOrder
   }
 
-  export type PackagesMinOrderByAggregateInput = {
+  export type OrdersMinOrderByAggregateInput = {
     id?: SortOrder
-    idPackages?: SortOrder
     status?: SortOrder
     user?: SortOrder
     addressIn?: SortOrder
     addressOut?: SortOrder
+    dateTime?: SortOrder
   }
 
-  export type PackagesSumOrderByAggregateInput = {
+  export type OrdersSumOrderByAggregateInput = {
     id?: SortOrder
-    idPackages?: SortOrder
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -2207,8 +2184,8 @@ export namespace Prisma {
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    in?: string[]
+    notIn?: string[]
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -2216,11 +2193,32 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
     not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type StringFieldUpdateOperationsInput = {
+    set?: string
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -2231,14 +2229,10 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type StringFieldUpdateOperationsInput = {
-    set?: string
-  }
-
   export type NestedIntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -2248,8 +2242,8 @@ export namespace Prisma {
 
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    in?: string[]
+    notIn?: string[]
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -2260,10 +2254,21 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -2278,8 +2283,8 @@ export namespace Prisma {
 
   export type NestedFloatFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
     lt?: number | FloatFieldRefInput<$PrismaModel>
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
@@ -2289,8 +2294,8 @@ export namespace Prisma {
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    in?: string[]
+    notIn?: string[]
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -2302,6 +2307,20 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
 

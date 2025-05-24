@@ -21,7 +21,7 @@ export default function Homed() {
   const hasSelected = selectedRowKeys.length > 0;
 
   const givePackajes = async() => {
-    const {data} = await axios.get('api/packages/get',{
+    const {data} = await axios.get('api/orders',{
       params:{
         type:'give'
       }
@@ -35,25 +35,6 @@ export default function Homed() {
   }
 
   const {data, refetch} = useQuery('givePackajes', givePackajes)
-
-  const dataSource = [
-    {
-      key: '1',
-      status: 32,
-      user: '89999999999',
-      addressIn: '10 Downing Street',
-      addressOut: '11 Downing Street',
-      button: <Button disabled={hasSelected} onClick={() => sendSMS(['1'])} size="large" variant="solid" color='purple'>Выдать</Button>
-    },
-    {
-      key: '2',
-      status: 42,
-      user: '89999999998',
-      addressIn: '10 Downing Street',
-      addressOut: '11 Downing Street',
-      button: <Button disabled={hasSelected} onClick={() => sendSMS(['2'])} size="large" variant="solid" color='purple'>Выдать</Button>
-    },
-  ];
 
   const columns = [
     {

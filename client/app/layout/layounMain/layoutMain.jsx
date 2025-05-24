@@ -4,7 +4,7 @@ import '@ant-design/v5-patch-for-react-19';
 import { Button, Layout } from 'antd';
 import style from './css/layoutMain.module.css'
 import logo from '../../img/73027170_2584979534895572_6661102536423899136_o (1).png'
-import { AppstoreAddOutlined, AppstoreOutlined, HistoryOutlined, LogoutOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import { AppstoreAddOutlined, AppstoreOutlined, BarChartOutlined, HistoryOutlined, InsertRowAboveOutlined, LogoutOutlined, MenuFoldOutlined, UserOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -17,9 +17,13 @@ export default function LayoutMain({ children }) {
 
     let links = [
         { title: 'Приём посылок', link: '/', icon: <AppstoreAddOutlined /> },
-        { title: 'Выдача посылок', link: '/out-packages', icon: <AppstoreOutlined /> },
-        { title: 'Отправка посылки', link: '/add-packages', icon: <MenuFoldOutlined /> },
+        { title: 'Выдача посылок', link: '/out-packages', icon: <MenuFoldOutlined /> },
+        { title: 'Создание посылки', link: '/add-packages', icon: <AppstoreAddOutlined /> },
+        { title: 'Выгрузка посылок', link: '/gdr', icon: <MenuFoldOutlined /> },
+        { title: 'Сотрудники', link: '/gdr', icon: <UserOutlined /> },
+        { title: 'Посещаемость', link: '/gdr', icon: <InsertRowAboveOutlined /> },
         { title: 'История посылок', link: '/gdr', icon: <HistoryOutlined /> },
+        { title: 'Статистика', link: '/gdr', icon: <BarChartOutlined /> },
     ]
     const queryClient = new QueryClient()
 
