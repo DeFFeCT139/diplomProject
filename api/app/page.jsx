@@ -67,9 +67,9 @@ export default function Home() {
     }
   ];
 
-  const onFinish = (values) => {
-    axios.post('/api/orders', values)
-    refetch()
+  const onFinish = async (values) => {
+    await axios.post('/api/orders', {status: 1, ...values})
+    await refetch()
     setOpen(false)
   }
 
@@ -98,8 +98,15 @@ export default function Home() {
           initialValues={{ variant: 'filled' }}
         >
           <Form.Item
-            label="Номер Телефона"
+            label="Номер Телефона получателя"
             name="user"
+            rules={[{ required: true, message: 'введите номер телефона' }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Номер Телефона отправителя"
+            name="userOut"
             rules={[{ required: true, message: 'введите номер телефона' }]}
           >
             <Input />

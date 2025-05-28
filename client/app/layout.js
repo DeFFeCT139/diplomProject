@@ -1,5 +1,9 @@
 import './css/style.css'
 import { AntdRegistry } from '@ant-design/nextjs-registry';
+import '@ant-design/v5-patch-for-react-19';
+import { SessionProvider } from 'next-auth/react';
+import Providers from './providers/providers';
+
 
 export const metadata = {
   title: "ПОЧТА РОССИИ ПВЗ",
@@ -10,9 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <AntdRegistry>
-          {children}
-        </AntdRegistry> 
+        <Providers>
+          <AntdRegistry>
+            {children}
+          </AntdRegistry>
+        </Providers>
       </body>
     </html>
   );

@@ -7,7 +7,8 @@ async function main() {
         { name: "В пути" },
         { name: "Готов к выдаче" },
         { name: "Выдан" },
-        { name: "Созадан" },
+        { name: "Создан" },
+        { name: "Отменён" },
     ]
     const Statuses = await prisma.statuses.findMany();
     if (Statuses.length === 0) {

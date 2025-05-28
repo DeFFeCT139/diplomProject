@@ -27,6 +27,7 @@ export async function GET(req, { params }) {
 export async function PUT(request, { params }) {
   try {
     const {status} = await request.json()
+    const {id} = await params
 
     if (status) {
       const statuses = await prisma.statuses.findUnique({
@@ -34,9 +35,8 @@ export async function PUT(request, { params }) {
           id: status
         }
       })
-      console.log(statuses.name)
       const updatedDetail = await prisma.orders.update({
-        where: { id: Number(params.id) },
+        where: { id: Number(id) },
         data: {
           status: statuses.name
         }
@@ -45,7 +45,7 @@ export async function PUT(request, { params }) {
     }
 
     const updatedDetail = await prisma.orders.update({
-      where: { id: Number(params.id) },
+      where: { id: Number(id) },
       data: body
     })
 

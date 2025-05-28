@@ -16,6 +16,7 @@ model Orders {
   status     String
   user       String
   addressIn  String
+  userOut    String?
   addressOut String
   dateTime   DateTime
 }

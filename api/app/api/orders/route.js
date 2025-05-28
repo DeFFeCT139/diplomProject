@@ -15,17 +15,20 @@ export async function GET() {
 
 export async function POST(request) {
     try {
-      const data = await request.json()
-      const status = await prisma.statuses.findUnique({
+      const {status, userOut, user, ...data} = await request.json()
+      const statusData = await prisma.statuses.findUnique({
         where:{
-            id: 1
+            id: status
         }
       })
+      console.log({userOut: String(userOut), user: String(user), ...data, dateTime: (new Date()), status: statusData.name})
       const newOrders = await prisma.orders.create({
-        data: { ...data, dateTime: new Date(), status: status.name}
+        data: {userOut: String(userOut), user: String(user), ...data, dateTime: (new Date()), status: statusData.name}
       })
+      console.log(newOrders)
       return NextResponse.json(newOrders, { status: 201 })
     } catch (error) {
+      console.log(error)
       return NextResponse.json(
         { error: 'Failed to create application' },
         { status: 500 }

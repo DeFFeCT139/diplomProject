@@ -1,3 +1,4 @@
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { SessionQuery } from "./provider/session";
 
 export const metadata = {
@@ -11,9 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <body style={{ backgroundColor: '#EAEAEA' }}>
-        <SessionQuery>
-          {children}
-        </SessionQuery>
+        <AntdRegistry>
+          <SessionQuery>
+            {children}
+          </SessionQuery>
+        </AntdRegistry>
       </body>
     </html>
   );

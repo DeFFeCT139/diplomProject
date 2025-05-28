@@ -1,15 +1,19 @@
-.sider{
-   height: calc(100vh - 40px);
-   border-radius: 15px;
-   padding: 20px;
-   background-color: rgb(25, 55, 255) !important;
+.sider {
+    height: calc(100vh - 40px);
+    border-radius: 15px;
+    padding: 20px;
+    position: sticky !important;
+    top: 20px;
+    background-color: rgb(25, 55, 255) !important;
 }
-.sider > div{
+
+.sider>div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.button{
+
+.button {
     background-color: #ffffff;
     width: 100%;
     font-size: 18px !important;
@@ -22,11 +26,13 @@
     position: relative;
     z-index: 999;
 }
-.button:hover{
+
+.button:hover {
     border-color: #ffffff !important;
     color: rgb(76, 97, 235) !important;
 }
-.buttonActive{
+
+.buttonActive {
     position: absolute;
     right: -21px;
     width: 40px;
@@ -34,28 +40,32 @@
     background-color: #ffffff;
     z-index: 1;
 }
-.buttonActive > div {
+
+.buttonActive>div {
     position: relative;
     height: 70px;
     overflow: hidden;
 }
-.buttonActive > div > div{
+
+.buttonActive>div>div {
     height: 30px;
     width: 40px;
     position: absolute;
     z-index: 1;
     background-color: rgb(25, 55, 255);
 }
-.buttonActive > div > div:nth-child(1){
+
+.buttonActive>div>div:nth-child(1) {
     top: -16px;
     border-radius: 0px 0px 15px 0px;
 }
-.buttonActive > div > div:nth-child(2){
+
+.buttonActive>div>div:nth-child(2) {
     bottom: -16px;
     border-radius: 0px 15px 0px 0px;
 }
 
-.buttonExit{
+.buttonExit {
     width: 100%;
     background-color: rgb(20, 44, 202) !important;
     border-color: rgb(20, 44, 202) !important;
@@ -63,12 +73,14 @@
     font-weight: 600 !important;
     padding: 20px !important;
 }
-.buttonExit:hover{
+
+.buttonExit:hover {
     color: rgb(20, 44, 202) !important;
     background-color: #ffffff !important;
     border-color: #ffffff !important;
 }
-.content{
+
+.content {
     background-color: #ffffff;
     padding: 0px 20px 0px 40px;
     min-height: calc(100vh - 40px) !important;
@@ -77,17 +89,85 @@
     background-position: right;
     background-image: url('../../../img/snapedit_1744929428280.png');
 }
-.logo{
+
+.logo {
     text-align: center;
     margin-bottom: 30px;
 }
-.logo > img{
+
+.logo>img {
     width: 100%;
     height: auto;
 }
 
+.chat {
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    background-color: #eeeeeede;
+    bottom: 80px;
+    padding: 10px;
+    right: 24px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.massageBlock {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px 5px 5px 0px;
+    overflow-y: scroll;
+}
+
+.massageBlock::-webkit-scrollbar {
+    width: 5px;
+    /* ширина scrollbar */
+}
+
+.massageBlock::-webkit-scrollbar-track {
+    background: rgba(255, 166, 0, 0);
+    /* цвет дорожки */
+}
+
+.massageBlock::-webkit-scrollbar-thumb {
+    background-color: rgb(202, 202, 202);
+    border-radius: 20px;
+}
+
+.massageBlock>span {
+    background-color: #d1d1d1de;
+    padding: 5px 10px;
+    border-radius: 5px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.massageBlock>span>span:last-child {
+    font-size: 10px;
+}
+.chatTitle{
+    position: relative;
+    text-align: center;
+}
+.chatTitle > span{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.massageMy {
+    text-align: end;
+    margin-left: auto;
+}
+
 @media (max-width: 1000px) {
-    .content{
+    .content {
         background-color: #ffffff;
         padding: 0px 15px 0px 0px;
         min-height: calc(100vh - 50px) !important;
@@ -96,7 +176,8 @@
         background-position: right;
         background-image: url('../../../img/snapedit_1744929428280.png');
     }
-    .sider{
+
+    .sider {
         height: 100vh;
         border-radius: 0 15px 15px 0px;
         position: fixed !important;
@@ -104,5 +185,5 @@
         left: -260px;
         padding: 20px;
         background-color: rgb(25, 55, 255) !important;
-     }
+    }
 }

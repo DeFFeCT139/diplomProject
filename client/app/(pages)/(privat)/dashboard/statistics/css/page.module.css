@@ -1,0 +1,35 @@
+.block{
+    padding: 15px;
+    background-color: #eeeeeede;
+    border-radius: 15px;
+}
+.grathBlock{
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 10px;
+}
+.StatBlock{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    height: 100%;
+}
+.StatBlock > div {
+    text-align: center;
+}
+.grathBlock > div {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 10px;
+}
+.textBlock{
+    display: flex;
+    padding: 0px 15px;
+    flex-direction: column;
+}
+.textBloksInfo{
+    background-color: #f1f1f1;
+    padding: 0px 10px 10px 10px;
+    border-radius: 10px;
+    width: calc(100%);
+}
